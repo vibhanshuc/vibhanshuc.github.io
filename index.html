@@ -1,0 +1,41 @@
+<!-- doctype html -->
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id='svg-rect'>
+            <h3>SVG bar</h3>
+            <svg>
+                <rect height='300' width='200' style="fill:blue" />
+            </svg>
+            <h3> D3 bar</h3>
+        </div>
+        <div id='svg-circle'>
+
+            <h3>SVG Circle </h3>
+            <svg height='50' width='150'>
+                <circle cx='25' cy='25' r='25' style='fill: red' />
+            </svg>
+            <br>
+            <h3>D3 Circle </h3>
+        </div>
+        <script src="scripts/d3.js"></script>
+        <script>
+            d3.select('#svg-rect')
+            .append('svg')
+            .append('rect')
+            .attr('width',  200)
+            .attr('height', 300)
+            .style('fill',  'violet');
+
+            d3.select('#svg-circle')
+            .append('svg')
+            .attr('height', '50')
+            .attr('width', '150')
+            .append('circle')
+            .attr({'cx': 25, 'cy': 25, 'r': 25})
+            .style('fill', 'red')
+        </script>
+    </body>
+</html>
