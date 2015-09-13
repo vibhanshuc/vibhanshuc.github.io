@@ -1,0 +1,37 @@
+{
+  "name": "d3",
+  "version": "0.1.0",
+  "description": "Practice code for d3",
+  "authors": [
+    "Vibhanshu Chaturvedi"
+  ],
+  "homepage": "https://vibhanshuc.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vibhanshuc/vibhanshuc.github.io"
+  },
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-inject": "^1.5.0",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-plumber": "^1.0.1",
+    "gulp-print": "^1.1.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "^2.0.1",
+    "yargs": "^3.24.0"
+  }
+}
