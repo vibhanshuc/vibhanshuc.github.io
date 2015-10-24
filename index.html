@@ -1,8 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
-<title>HTML5, CSS3 and JavaScript demo</title>
+    <title>HTML5, CSS3 and JavaScript demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./bower_components/google-code-prettify/bin/prettify.min.css">
+    <script type="text/javascript" src="./bower_components/google-code-prettify/bin/prettify.min.js"></script>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .helper {
+            margin: 20px;
+        }
+
+        .helper p:before {
+            font-family: "Fontawesome";
+            content: "\f007";
+            margin-right: 10px;
+            margin-left: 30px;
+        }
+
+        .helper p {
+            text-indent: -57px;
+            margin-left: 20px;
+        }
+
+        .linenums > li {
+            list-style-type: decimal;
+        }
+    </style>
+    <!--[if IE]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <style>
 .helper{
@@ -21,21 +56,46 @@
 }
 </style>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="Demo/ANGULAR/Githubviewer">GithubViewer</a></li>
+                <li><a href="Demo/D3/">D3</a></li>
+            </ul>
+        </div>
+        <!--.nav-collapse -->
+    </div>
+</nav>
 
-<a href="src/">D3 Demo</a>
-<a href="#helperDemo">Custom List style</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <a href="#helperDemo">Custom List style</a>
 
-<div id="helperDemo">
-  <div class="helper">
-      <p>This is some dummy text. This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.</p>
-  </div>
-  <div class="helper">
-      <p>This is some dummy text. This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.</p>
-  </div>
-  <div class="helper">
-      <p>This is some dummy text. This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.</p>
-  </div>
-</div>  
+            <div id="helperDemo">
+                <div class="helper">
+                    <p>This is some dummy text. This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.</p>
+                </div>
+                <div class="helper">
+                    <p>This is some dummy text. This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.</p>
+                </div>
+                <div class="helper">
+                    <p>This is some dummy text. This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.This is some dummy text.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- End your code here -->
   

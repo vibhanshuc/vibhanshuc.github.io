@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angular example which fetches data from github api">
+    <meta name="author" content="Vibhanshu Chaturvedi">
+    <title>Angular | GithubViewer</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .helper {
+            margin: 20px;
+        }
+
+        .helper p:before {
+            font-family: "Fontawesome";
+            content: "\f007";
+            margin-right: 10px;
+            margin-left: 30px;
+        }
+
+        .helper p {
+            text-indent: -57px;
+            margin-left: 20px;
+        }
+
+        .linenums > li {
+            list-style-type: decimal;
+        }
+    </style>
+    <!--[if IE]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body onload="prettyPrint()">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="../../../">Home</a></li>
+                <li class="active"><a href="../../../Demo/ANGULAR/Githubviewer">GithubViewer</a></li>
+                <li><a href="../../../Demo/D3/">D3</a></li>
+            </ul>
+        </div>
+        <!--.nav-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <div class="row"  ng-app="myApp" ng-controller="mainCtrl" style="margin-top: 30px">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>{{ message }}</h2>
+
+            <form name="searchUser" ng-submit="search(username)">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" required class="form-control" placeholder="Search for..." ng-model="username">
+
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Go!</button>
+                          </span>
+                    </div>
+                </div>
+
+                <!-- /input-group -->
+            </form>
+        </div>
+        <div class="col-sm-offset-1 col-sm-5" >
+            <div  style="margin: 30px;">
+                <div>
+                    {{ error }}
+                </div>
+                <div ng-show="user">
+                    <p>First Name : {{ user.name }}</p>
+                    <p>Last Name : {{ user.location }}</p>
+                    <img ng-src="{{user.avatar_url}}" title="{{ user.name}}" style="height: 200px;">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5" ng-show="user">
+            <div class="col-sm-8" >
+                <label>Order</label>
+                <select ng-model="repoSortOrder" class="form-control">
+                    <option value="+name">Name</option>
+                    <option value="-stargazers_count">Stars</option>
+                    <option value="+language">Language</option>
+                </select>
+            </div>
+            <div class="col-sm-4" >
+                <label>Limit</label>
+                <input type="number" ng-model="reposLimit" min="5" class="form-control">
+            </div>
+            <br/>
+            <h3>Repos</h3>
+            <table class="table table-stripped">
+                <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Stars</td>
+                    <td>Languages</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="repo in repos | orderBy:repoSortOrder | limitTo:reposLimit  ">
+                    <td>{{ repo.name }}</td>
+                    <td>{{ repo.stargazers_count | number }}</td>
+                    <td>{{ repo.language }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="githuviewer.js"></script>
+</body>
+
+</html>
