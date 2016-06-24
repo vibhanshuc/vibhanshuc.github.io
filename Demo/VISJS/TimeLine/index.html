@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css">
+  <style type="text/css">
+    body, html, input {
+      font-family: sans-serif;
+      font-size: 12pt;
+    }
+
+    #visualization {
+      position: relative;
+    }
+
+    .menu {
+      float: right;
+      margin-bottom: 10px;
+      z-index: 9999;
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div id="visualization">
+  <div class="menu">
+    <input type="button" id="moveToPreviousDate" value="Previous Day"/>
+    <input type="button" id="moveToCurrentDate" value="Today"/>
+    <input type="button" id="moveToNextDate" value="Next Day"/>
+    <input type="date" id="moveToCustomDate"/>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
