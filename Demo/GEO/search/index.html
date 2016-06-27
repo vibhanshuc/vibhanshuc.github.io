@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geolocation Introduction</title>
+
+  <meta charset="utf-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+
+</head>
+
+<body class="container-fluid">
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Geo Location Search</h3>
+    <div class="form-group">
+      <input type="text" id="venue-search-box" class="form-control" placeholder="Search" autocomplete="on"
+             value="">
+    </div>
+    <form id="venue-form">
+      <input type="hidden" name="id" id="venue-id">
+      <div class="row">
+        <div class="form-group col-xs-8">
+          <label for="route" class="control-label">Venue Name</label>
+          <input type="text" id="route" class="form-control" required="required" name="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="sublocality_level_3" class="control-label">Line 1</label>
+          <input id="sublocality_level_3" class="form-control" required="required" name="sublocality_level_3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="sublocality_level_2" class="control-label">Line 2</label>
+          <input id="sublocality_level_2" class="form-control" required="required" name="sublocality_level_2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label for="administrative_area_level_2" class="control-label">City</label>
+          <input type="text" id="administrative_area_level_2" class="form-control" required="required"
+                 name="city">
+        </div>
+
+        <div class="form-group col-xs-6">
+          <label for="administrative_area_level_1" class="control-label">State</label>
+          <input type="text" id="administrative_area_level_1" class="form-control" required="required"
+                 name="state">
+        </div>
+
+        <div class="form-group col-xs-6">
+          <label for="country" class="control-label">Country</label>
+          <input type="text" id="country" class="form-control" required="required"
+                 name="country">
+        </div>
+
+
+        <div class="form-group col-xs-6">
+          <label for="postal_code" class="control-label">Pincode</label>
+          <input type="number" id="postal_code" minlength="6" maxlength="6" min="000000" max="999999"
+                 class="form-control" name="pincode">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-6">
+          <label for="venue-latitude" class="control-label">Latitude</label>
+          <input type="number" id="venue-latitude" class="form-control" required="required" name="latitude" step="0.00001">
+        </div>
+        <div class="form-group col-xs-6">
+          <label for="venue-longitude" class="control-label">Longitude</label>
+          <input type="number" id="venue-longitude" class="form-control" required="required" name="longitude" step="0.00001">
+        </div>
+      </div>
+      <div class="row hidden">
+        <div class="form-group col-xs-12">
+          <div class="checkbox">
+            <input id="checkHub" class="filter" type="checkbox" value="">
+            <label for="checkHub">Is this venue also a Hub?</label>
+          </div>
+        </div>
+        <div class="form-group col-xs-6" id="hub-name" style="display: none">
+          <label for="venue-hub-name" class="control-label">Hub Name</label>
+          <input type="text" id="venue-hub-name" class="form-control" required="required" name="hub_name">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-6" style="padding: 0;">
+    <div id="map-canvas" class="google-maps" style="height: 100vh"></div>
+
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf8CmwyFz4utTisZO--0grNGV9Iyw9WPk&amp;libraries=places" type="text/javascript"></script>
+
+<script src="map.js"></script>
+
+</body>
+</html>
