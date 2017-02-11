@@ -1,0 +1,76 @@
+html {
+  font-size: 10px;
+  background: url(http://i.imgur.com/b9r5sEL.jpg) no-repeat;
+  background-size: cover;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.keys {
+  display: flex;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+  font-weight: bold;
+}
+
+.hint {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 70px;
+  color: #FFFFFF;
+}
+
+.hint span {
+  font-size: 2rem;
+  border: 1px solid #ffc600;
+  padding: 2rem;
+}
+
+.copy {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 10px;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
