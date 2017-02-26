@@ -24,15 +24,12 @@
         .then(onUserComplete, onError);
 
     };
-    var person = {
-      firstName: 'Vibhanshu',
-      lastName: 'Chaturvedi',
-      imageSource: 'https://s.gravatar.com/avatar/5b7f8e748e276bc6b9553f1f51ab78ab'
-    };
+
     $scope.username = 'vibhanshuc';
     $scope.message = 'GitHub Viewer';
-    $scope.person = person;
     $scope.repoSortOrder = '-stargazers_count';
     $scope.reposLimit = 5;
+
+    $scope.search($scope.username);
   });
 })();
