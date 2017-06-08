@@ -72,6 +72,9 @@
       setTimeout(function () {
         playSound({keyCode: key.getAttribute('data-key')});
       });
+      key.addEventListener('click', function (event) {
+        playSound({keyCode: key.getAttribute('data-key')});
+      });
       key.addEventListener('transitionend', removeTransition);
     });
 
