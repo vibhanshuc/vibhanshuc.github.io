@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>vibhanshu.me | CSS - Variable<</title>
   <meta charset="UTF-8">
-  <title>CSS - Variable</title>
+  <meta name="description" content="vibhanshu chaturvedi, front-end developer">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="https://www.google.co.in/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <style>
     :root {
       --base: #ffc600;
@@ -67,7 +72,7 @@
 
     function handleUpdate() {
       const suffix = this.dataset.suffix || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      document.documentElement.style.setProperty('--' + this.name, this.value + suffix);
     }
 
     inputs.forEach(function (input) {

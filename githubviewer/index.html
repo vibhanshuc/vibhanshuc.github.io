@@ -2,97 +2,105 @@
 <html lang="">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Angular example which fetches data from github api">
-    <meta name="author" content="Vibhanshu Chaturvedi">
-    <title>Angular | GithubViewer</title>
-    <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link type="text/css" rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <!--[if IE]>
-    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Angular example which fetches data from github api">
+  <meta name="author" content="Vibhanshu Chaturvedi">
+  <title>vibhanshu.me | Angular - GithubViewer</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <link type="text/css" rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <!--[if IE]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
 <div class="container">
-    <div class="row"  ng-app="myApp" ng-controller="mainCtrl" style="margin-top: 30px">
-        <div class="col-md-10 col-md-offset-1">
-            <h2>{{ message }}</h2>
+  <div class="row" ng-app="myApp" ng-controller="mainCtrl" style="margin-top: 30px">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>{{ message }}</h2>
 
-            <form name="searchUser" ng-submit="search(username)">
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" required class="form-control" placeholder="Search for..." ng-model="username">
+      <form name="searchUser" ng-submit="search(username)">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" required class="form-control" placeholder="Search for..." ng-model="username">
 
-                          <span class="input-group-btn">
+            <span class="input-group-btn">
                             <button class="btn btn-default" type="submit">Go!</button>
                           </span>
-                    </div>
-                </div>
+          </div>
+        </div>
 
-                <!-- /input-group -->
-            </form>
-        </div>
-        <div class="col-sm-offset-1 col-sm-5" >
-            <div  style="margin: 30px;">
-                <div>
-                    {{ error }}
-                </div>
-                <div ng-show="user">
-                    <p>Name : {{ user.name }}</p>
-                    <p>Location : {{ user.location }}</p>
-                    <img ng-src="{{user.avatar_url}}" title="{{ user.name}}" style="height: 200px;">
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5" ng-show="user">
-            <div class="col-sm-8" >
-                <label>Order</label>
-                <select ng-model="repoSortOrder" class="form-control">
-                    <option value="+name">Name</option>
-                    <option value="-stargazers_count">Stars</option>
-                    <option value="+language">Language</option>
-                </select>
-            </div>
-            <div class="col-sm-4" >
-                <label>Limit</label>
-                <input type="number" ng-model="reposLimit" min="5" class="form-control">
-            </div>
-            <br/>
-            <h3>Repos</h3>
-            <table class="table table-stripped">
-                <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Stars</td>
-                    <td>Languages</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="repo in repos | orderBy:repoSortOrder | limitTo:reposLimit  ">
-                    <td>{{ repo.name }}</td>
-                    <td>{{ repo.stargazers_count | number }}</td>
-                    <td>{{ repo.language }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <!-- /input-group -->
+      </form>
     </div>
+    <div class="col-sm-offset-1 col-sm-5">
+      <div style="margin: 30px;">
+        <div>
+          {{ error }}
+        </div>
+        <div ng-show="user">
+          <p>Name : {{ user.name }}</p>
+          <p>Location : {{ user.location }}</p>
+          <img ng-src="{{user.avatar_url}}" title="{{ user.name}}" style="height: 200px;">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5" ng-show="user">
+      <div class="col-sm-8">
+        <label>Order</label>
+        <select ng-model="repoSortOrder" class="form-control">
+          <option value="+name">Name</option>
+          <option value="-stargazers_count">Stars</option>
+          <option value="+language">Language</option>
+        </select>
+      </div>
+      <div class="col-sm-4">
+        <label>Limit</label>
+        <input type="number" ng-model="reposLimit" min="5" class="form-control">
+      </div>
+      <br/>
+      <h3>Repos</h3>
+      <table class="table table-stripped">
+        <thead>
+        <tr>
+          <td>Name</td>
+          <td>Stars</td>
+          <td>Languages</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="repo in repos | orderBy:repoSortOrder | limitTo:reposLimit  ">
+          <td>{{ repo.name }}</td>
+          <td>{{ repo.stargazers_count | number }}</td>
+          <td>{{ repo.language }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="githuviewer.js"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-57383172-3', 'auto');
   ga('send', 'pageview');
