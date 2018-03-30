@@ -1,0 +1,30 @@
+{
+  "name": "vibhanshuc.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"**/*.*\"",
+    "lint": "eslint \"**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibhanshuc/vibhanshuc.github.io.git"
+  },
+  "author": "vibhanshu86@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vibhanshuc/vibhanshuc.github.io/issues"
+  },
+  "homepage": "https://github.com/vibhanshuc/vibhanshuc.github.io#readme",
+  "dependencies": {
+    "browser-sync": "^2.23.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-es5": "^1.2.0",
+    "eslint-plugin-react": "^7.6.1"
+  }
+}
