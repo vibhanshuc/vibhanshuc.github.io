@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="vibhanshu, front-end developer, CSS Animations">
+    <meta name="author" content="vibhashu86@gmail.com">
+    <title>vibhanshu.me | CSS Animations - Modal Demo</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-overlay.open .modal {
+            transform: translateY(0) scale(1) rotate(0);
+        }
+
+        .modal {
+            width: 50%;
+            height: 50%;
+            background-color: #fff;
+            border-radius: 5px;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 0 2px rgba(51, 51, 51, 0.5);
+            opacity: 1;
+            transform: translateY(300px) scale(0) rotate(360deg);
+            transition: transform 1s;
+        }
+        .modal .header,
+        .modal .footer {
+            line-height: 40px;
+            height: 40px;
+            background-color: #f1f1f1;
+            padding: 0 10px;
+            flex: 0 0;
+            font-weight: bold;
+            color: #333333;
+            box-sizing: border-box;
+        }
+        .modal .content {
+            flex: 1 1;
+        }
+        .modal .footer {
+            text-align: right;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="modal" class="modal-overlay">
+    <div class="modal">
+        <div class="header">A Popup</div>
+        <div class="content"></div>
+        <div class="footer">
+            <button id="okBtn" class="btn">Ok</button>
+        </div>
+    </div>
+</div>
+<button id="triggerBtn">Open Modal</button>
+<script>
+    var triggerButton = document.getElementById('triggerBtn');
+    var okButton = document.getElementById('okBtn');
+
+    var modal = document.getElementById('modal');
+
+
+    triggerButton.addEventListener('click', function () {
+        modal.classList.add('open');
+    });
+
+    okButton.addEventListener('click', function () {
+        modal.classList.remove('open');
+    });
+
+
+</script>
+</body>
+</html>

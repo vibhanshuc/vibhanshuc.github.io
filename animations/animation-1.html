@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="vibhanshu, front-end developer, CSS Animations">
+    <meta name="author" content="vibhashu86@gmail.com">
+    <title>vibhanshu.me | CSS Animations - Demo 1</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+        }
+
+        .box {
+            transition: transform 1s;
+        }
+
+        #box1:hover {
+            transform: translateX(200px);
+        }
+
+        #box2:hover {
+            transform: translateX(-200px);
+        }
+
+        #box3:hover {
+            transform: translateY(200px);
+        }
+
+        #box4:hover {
+            transform: scale(2) translateY(-200px);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box1" class="box"></div>
+
+    <hr/>
+
+    <div id="box2" class="box"></div>
+
+    <hr/>
+
+    <div id="box3" class="box"></div>
+
+    <hr/>
+
+    <div id="box4" class="box"></div>
+
+</body>
+</html>
