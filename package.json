@@ -18,10 +18,8 @@
     "url": "https://github.com/vibhanshuc/vibhanshuc.github.io/issues"
   },
   "homepage": "https://github.com/vibhanshuc/vibhanshuc.github.io#readme",
-  "dependencies": {
-    "browser-sync": "^2.23.6"
-  },
   "devDependencies": {
+    "browser-sync": "^2.23.6",
     "babel-eslint": "^8.2.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb-es5": "^1.2.0",

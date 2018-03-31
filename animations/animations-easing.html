@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="vibhanshu, front-end developer, CSS Animations - Easing">
+    <meta name="author" content="vibhashu86@gmail.com">
+    <title>vibhanshu.me | CSS Animations - Demo 1</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        .container {
+            width: calc(100% - 20px);
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+        }
+
+        .container:hover .box {
+            transform: translateX(100vw);
+        }
+
+        .box {
+            color: #ffffff;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: tomato;
+            transition: transform 1s;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .box:first-of-type {
+            transition-timing-function: linear;
+        }
+
+        .box:nth-of-type(2) {
+            transition-timing-function: ease;
+        }
+
+        .box:nth-of-type(3) {
+            transition-timing-function: ease-in;
+        }
+
+        .box:nth-of-type(4) {
+            transition-timing-function: ease-out;
+        }
+
+        .box:nth-of-type(5) {
+            transition-timing-function: ease-in-out;
+        }
+
+        .box:nth-of-type(6) {
+            transition-timing-function: step-start;
+        }
+
+        .box:nth-of-type(7) {
+            transition-timing-function: step-end;
+        }
+
+        .box:nth-of-type(8) {
+            transition-timing-function: steps(4);
+        }
+
+        .box:nth-of-type(9) {
+            transition-timing-function: cubic-bezier(1, -1.24, 0.29, 1.59);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box">1 (linear)</div>
+    <div class="box">2 (ease)</div>
+    <div class="box">3 (ease in)</div>
+    <div class="box">4 (ease out)</div>
+    <div class="box">5 (ease in out)</div>
+    <div class="box">6 (step start)</div>
+    <div class="box">7 (step end)</div>
+    <div class="box">8 (steps - 4)</div>
+    <div class="box">9 (cubic bezier - 1, -1.24, 0.29, 1.59)</div>
+</div>
+
+</body>
+</html>
