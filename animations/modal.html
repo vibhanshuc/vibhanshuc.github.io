@@ -25,6 +25,7 @@
             align-items: center;
             opacity: 0;
             pointer-events: none;
+            will-change: opacity;
         }
         .modal-overlay.open {
             opacity: 1;
@@ -42,11 +43,11 @@
             display: flex;
             overflow: hidden;
             flex-direction: column;
-            border-radius: 15px;
             box-shadow: 0 0 2px rgba(51, 51, 51, 0.5);
             opacity: 1;
             transform: translateY(300px) scale(0) rotate(360deg);
             transition: transform 1s;
+            will-change: transform;
         }
         .modal .header,
         .modal .footer {
