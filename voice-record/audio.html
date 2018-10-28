@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vibhanshu.in | audio HTML tag</title>
+    <script>
+        window.onload = function (ev) {
+            var audio = document.getElementById('audio-player');
+            var video = document.getElementById('video-player');
+
+            document.getElementById('play-audio').addEventListener('click', function (ev1) {
+               audio.play();
+            });
+
+            document.getElementById('pause-audio').addEventListener('click', function (ev1) {
+                audio.pause();
+            });
+
+            document.getElementById('play-video').addEventListener('click', function (ev1) {
+                video.play();
+            });
+
+            document.getElementById('pause-video').addEventListener('click', function (ev1) {
+                video.pause();
+            });
+
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Demo - Audio Tag
+    </header>
+    <article>
+        <div>
+        <audio id="audio-player">
+            <source src="http://jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3" type="audio/mpeg">
+            <source src="http://jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg" type="audio/ogg">
+        </audio>
+        <button id="play-audio">Play</button>
+        <button id="pause-audio">Pause</button>
+        </div>
+        <div>
+        <video id="video-player">
+            <source src="http://jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" type="video/webm">
+            <source src="http://jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" type="video/ogv">
+            <source src="http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" type="video/m4v">
+        </video>
+            <button id="play-video">Play</button>
+            <button id="pause-video">Pause</button>
+        </div>
+    </article>
+</body>
+</html>
